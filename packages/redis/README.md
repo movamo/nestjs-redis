@@ -254,7 +254,7 @@ Distributed under the MIT License. See `LICENSE` for more information.
 [stars-shield]: https://img.shields.io/github/stars/mvmdev/nestjs-redis?style=for-the-badge
 [stars-url]: https://github.com/movamo/nestjs-redis/stargazers
 [issues-shield]: https://img.shields.io/github/issues/mvmdev/nestjs-redis?style=for-the-badge
-[issues-url]: https://github.com/mvmdev/nestjs-redis/issues
+[issues-url]: https://github.com/movamo/nestjs-redis/issues
 [license-shield]: https://img.shields.io/npm/l/@mvmdev/nestjs-redis?style=for-the-badge
 [license-url]: https://github.com/movamo/nestjs-redis/blob/main/LICENSE
 [vulnerabilities-shield]: https://img.shields.io/snyk/vulnerabilities/npm/@mvmdev/nestjs-redis?style=for-the-badge
