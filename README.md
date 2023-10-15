@@ -248,7 +248,7 @@ Distributed under the MIT License. See `LICENSE` for more information.
 - [Official Redis Docker Image](https://hub.docker.com/_/redis)
 - [Official Bitnami Redis Docker Image](https://hub.docker.com/r/bitnami/redis)
 
-[npm-shield]: https://img.shields.io/npm/v/@liaoliaots/nestjs-redis/latest?style=for-the-badge
+[npm-shield]: https://img.shields.io/npm/v/@mvmdev/nestjs-redis/latest?style=for-the-badge
 [npm-url]: https://www.npmjs.com/package/@mvmdev/nestjs-redis
 [downloads-shield]: https://img.shields.io/npm/dm/@liaoliaots/nestjs-redis?style=for-the-badge
 [downloads-url]: https://www.npmjs.com/package/@mvmdev/nestjs-redis
