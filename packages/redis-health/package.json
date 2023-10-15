@@ -1,8 +1,8 @@
 {
-  "name": "@liaoliaots/nestjs-redis-health",
-  "version": "9.0.4",
+  "name": "@movamo/nestjs-redis-health",
+  "version": "10.0.0",
   "description": "Redis(ioredis) health checks module for Nest framework (node.js).",
-  "author": "LiaoLiao <yxiaosong002@gmail.com>",
+  "author": "movamo",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "files": [
@@ -41,29 +41,29 @@
     "publish:rc": "npm publish --tag rc"
   },
   "dependencies": {
-    "tslib": "2.4.1"
+    "tslib": "2.6.2"
   },
   "devDependencies": {
-    "@liaoliaots/nestjs-redis": "workspace:*"
+    "@movamo/nestjs-redis": "workspace:*"
   },
   "peerDependencies": {
-    "@nestjs/common": "^9.0.0",
-    "@nestjs/core": "^9.0.0",
-    "@nestjs/terminus": "^9.0.0",
+    "@nestjs/common": "^10.0.0",
+    "@nestjs/core": "^10.0.0",
+    "@nestjs/terminus": "^10.0.0",
     "ioredis": "^5.0.0"
   },
   "engines": {
-    "node": ">=12.22.0"
+    "node": ">=16.0.0"
   },
   "publishConfig": {
     "access": "public"
   },
-  "homepage": "https://github.com/liaoliaots/nestjs-redis#readme",
+  "homepage": "https://github.com/movamo/nestjs-redis#readme",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/liaoliaots/nestjs-redis.git"
+    "url": "git+https://github.com/movamo/nestjs-redis.git"
   },
   "bugs": {
-    "url": "https://github.com/liaoliaots/nestjs-redis/issues"
+    "url": "https://github.com/movamo/nestjs-redis/issues"
   }
 }
