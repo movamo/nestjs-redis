@@ -1,6 +1,6 @@
 {
   "name": "@mvmdev/nestjs-redis",
-  "version": "10.0.0",
+  "version": "10.0.1",
   "description": "Redis(ioredis) module for Nest framework (node.js).",
   "author": "movamo",
   "main": "dist/index.js",
