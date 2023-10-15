@@ -355,5 +355,3 @@ const module: TestingModule = await Test.createTestingModule({
   providers: [{ provide: getClusterToken('namespace'), useValue: mockedInstance }, YourService]
 }).compile();
 ```
-
-A working example is available [here](/sample).

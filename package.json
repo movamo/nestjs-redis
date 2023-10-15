@@ -2,7 +2,7 @@
   "name": "@movamo/root",
   "version": "10.0.0",
   "description": "Redis(ioredis) module for Nest framework (node.js).",
-  "author": "movamo",
+  "author": "Movamo",
   "private": true,
   "license": "MIT",
   "keywords": [

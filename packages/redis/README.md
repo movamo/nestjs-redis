@@ -21,7 +21,6 @@
     <a href="#usage"><strong>Explore the docs »</strong></a>
     <br />
     <br />
-    <a href="/sample">View Demos</a>
     ·
     <a href="https://github.com/movamo/nestjs-redis/issues/new/choose">Report Bug</a>
     ·
