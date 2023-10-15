@@ -1,12 +1,12 @@
 # Welcome to nestjs-redis 👋
 
-[![npm (tag)](https://img.shields.io/npm/v/@liaoliaots/nestjs-redis/latest?style=flat-square)](https://www.npmjs.com/package/@liaoliaots/nestjs-redis)
-[![npm (scoped with tag)](https://img.shields.io/npm/v/@liaoliaots/nestjs-redis/next?style=flat-square)](https://www.npmjs.com/package/@liaoliaots/nestjs-redis/v/3.0.0-next.2)
-![npm](https://img.shields.io/npm/dw/@liaoliaots/nestjs-redis?style=flat-square)
-[![GitHub](https://img.shields.io/github/license/liaoliaots/nestjs-redis?style=flat-square)](https://github.com/liaoliaots/nestjs-redis/blob/main/LICENSE)
+[![npm (tag)](https://img.shields.io/npm/v/@mvmdev/nestjs-redis/latest?style=flat-square)](https://www.npmjs.com/package/@mvmdev/nestjs-redis)
+[![npm (scoped with tag)](https://img.shields.io/npm/v/@mvmdev/nestjs-redis/next?style=flat-square)](https://www.npmjs.com/package/@mvmdev/nestjs-redis/v/3.0.0-next.2)
+![npm](https://img.shields.io/npm/dw/@mvmdev/nestjs-redis?style=flat-square)
+[![GitHub](https://img.shields.io/github/license/mvmdev/nestjs-redis?style=flat-square)](https://github.com/movamo/nestjs-redis/blob/main/LICENSE)
 [![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier)
-[![CodeFactor](https://www.codefactor.io/repository/github/liaoliaots/nestjs-redis/badge)](https://www.codefactor.io/repository/github/liaoliaots/nestjs-redis)
-[![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://github.com/liaoliaots/nestjs-redis/graphs/commit-activity)
+[![CodeFactor](https://www.codefactor.io/repository/github/mvmdev/nestjs-redis/badge)](https://www.codefactor.io/repository/github/movamo/nestjs-redis)
+[![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://github.com/movamo/nestjs-redis/graphs/commit-activity)
 [![Conventional Commits](https://img.shields.io/badge/Conventional%20Commits-1.0.0-yellow.svg)](https://conventionalcommits.org)
 
 > Redis([ioredis](https://github.com/luin/ioredis)) module for NestJS framework
@@ -49,24 +49,24 @@
 ### NestJS 8:
 
 ```sh
-$ npm install --save @liaoliaots/nestjs-redis@next ioredis @nestjs/terminus@next
+$ npm install --save @mvmdev/nestjs-redis@next ioredis @nestjs/terminus@next
 $ npm install --save-dev @types/ioredis
 ```
 
 ```sh
-$ yarn add @liaoliaots/nestjs-redis@next ioredis @nestjs/terminus@next
+$ yarn add @mvmdev/nestjs-redis@next ioredis @nestjs/terminus@next
 $ yarn add --dev @types/ioredis
 ```
 
 ### NestJS 7:
 
 ```sh
-$ npm install --save @liaoliaots/nestjs-redis@2 ioredis @nestjs/terminus@7
+$ npm install --save @mvmdev/nestjs-redis@2 ioredis @nestjs/terminus@7
 $ npm install --save-dev @types/ioredis
 ```
 
 ```sh
-$ yarn add @liaoliaots/nestjs-redis@2 ioredis @nestjs/terminus@7
+$ yarn add @mvmdev/nestjs-redis@2 ioredis @nestjs/terminus@7
 $ yarn add --dev @types/ioredis
 ```
 
@@ -80,7 +80,7 @@ The RedisModule is a [global module](https://docs.nestjs.com/modules#global-modu
 
 ```TypeScript
 import { Module } from '@nestjs/common';
-import { RedisModule } from '@liaoliaots/nestjs-redis';
+import { RedisModule } from '@mvmdev/nestjs-redis';
 
 @Module({
     imports: [RedisModule.forRoot()]
@@ -92,7 +92,7 @@ with async config:
 
 ```TypeScript
 import { Module } from '@nestjs/common';
-import { RedisModule } from '@liaoliaots/nestjs-redis';
+import { RedisModule } from '@mvmdev/nestjs-redis';
 import { ConfigService, ConfigModule } from '@nestjs/config';
 
 @Module({
@@ -115,7 +115,7 @@ with single client:
 
 ```TypeScript
 import { Module } from '@nestjs/common';
-import { RedisModule } from '@liaoliaots/nestjs-redis';
+import { RedisModule } from '@mvmdev/nestjs-redis';
 
 @Module({
     imports: [
@@ -139,7 +139,7 @@ with multiple clients:
 
 ```TypeScript
 import { Module } from '@nestjs/common';
-import { RedisModule } from '@liaoliaots/nestjs-redis';
+import { RedisModule } from '@mvmdev/nestjs-redis';
 
 @Module({
     imports: [
@@ -172,7 +172,7 @@ export class AppModule {}
 
 ```TypeScript
 import { Module } from '@nestjs/common';
-import { RedisModule } from '@liaoliaots/nestjs-redis';
+import { RedisModule } from '@mvmdev/nestjs-redis';
 
 @Module({
     imports: [
@@ -202,7 +202,7 @@ You can also override the **defaultOptions**:
 
 ```TypeScript
 import { Module } from '@nestjs/common';
-import { RedisModule } from '@liaoliaots/nestjs-redis';
+import { RedisModule } from '@mvmdev/nestjs-redis';
 
 @Module({
     imports: [
@@ -233,7 +233,7 @@ with **onClientCreated**:
 
 ```TypeScript
 import { Module } from '@nestjs/common';
-import { RedisModule } from '@liaoliaots/nestjs-redis';
+import { RedisModule } from '@mvmdev/nestjs-redis';
 
 @Module({
     imports: [
@@ -259,7 +259,7 @@ via decorator:
 ```TypeScript
 import { Injectable } from '@nestjs/common';
 import { Redis } from 'ioredis';
-import { InjectRedis, DEFAULT_REDIS_CLIENT } from '@liaoliaots/nestjs-redis';
+import { InjectRedis, DEFAULT_REDIS_CLIENT } from '@mvmdev/nestjs-redis';
 
 @Injectable()
 export class AppService {
@@ -284,7 +284,7 @@ via service:
 ```TypeScript
 import { Injectable } from '@nestjs/common';
 import { Redis } from 'ioredis';
-import { DEFAULT_REDIS_CLIENT, RedisService } from '@liaoliaots/nestjs-redis';
+import { DEFAULT_REDIS_CLIENT, RedisService } from '@mvmdev/nestjs-redis';
 
 @Injectable()
 export class AppService {
@@ -318,7 +318,7 @@ export class AppService {
 
 ```TypeScript
 import { Module } from '@nestjs/common';
-import { RedisModule } from '@liaoliaots/nestjs-redis';
+import { RedisModule } from '@mvmdev/nestjs-redis';
 import { TerminusModule } from '@nestjs/terminus';
 
 @Module({
@@ -332,7 +332,7 @@ export class AppModule {}
 ```TypeScript
 import { Controller, Get } from '@nestjs/common';
 import { HealthCheckService, HealthCheckResult } from '@nestjs/terminus';
-import { RedisHealthIndicator, DEFAULT_REDIS_CLIENT } from '@liaoliaots/nestjs-redis';
+import { RedisHealthIndicator, DEFAULT_REDIS_CLIENT } from '@mvmdev/nestjs-redis';
 
 @Controller('app')
 export class AppController {
@@ -401,7 +401,7 @@ The ClusterModule is a [global module](https://docs.nestjs.com/modules#global-mo
 
 ```TypeScript
 import { Module } from '@nestjs/common';
-import { ClusterModule } from '@liaoliaots/nestjs-redis';
+import { ClusterModule } from '@mvmdev/nestjs-redis';
 
 @Module({
     imports: [
@@ -419,7 +419,7 @@ with async config:
 
 ```TypeScript
 import { Module } from '@nestjs/common';
-import { ClusterModule } from '@liaoliaots/nestjs-redis';
+import { ClusterModule } from '@mvmdev/nestjs-redis';
 import { ConfigService, ConfigModule } from '@nestjs/config';
 
 @Module({
@@ -442,7 +442,7 @@ with single client:
 
 ```TypeScript
 import { Module } from '@nestjs/common';
-import { ClusterModule } from '@liaoliaots/nestjs-redis';
+import { ClusterModule } from '@mvmdev/nestjs-redis';
 
 @Module({
     imports: [
@@ -463,7 +463,7 @@ with multiple clients:
 
 ```TypeScript
 import { Module } from '@nestjs/common';
-import { ClusterModule } from '@liaoliaots/nestjs-redis';
+import { ClusterModule } from '@mvmdev/nestjs-redis';
 
 @Module({
     imports: [
@@ -490,7 +490,7 @@ with **onClientCreated**:
 
 ```TypeScript
 import { Module } from '@nestjs/common';
-import { ClusterModule } from '@liaoliaots/nestjs-redis';
+import { ClusterModule } from '@mvmdev/nestjs-redis';
 
 @Module({
     imports: [
@@ -516,7 +516,7 @@ via decorator:
 ```TypeScript
 import { Injectable } from '@nestjs/common';
 import { Cluster } from 'ioredis';
-import { InjectCluster, DEFAULT_CLUSTER_CLIENT } from '@liaoliaots/nestjs-redis';
+import { InjectCluster, DEFAULT_CLUSTER_CLIENT } from '@mvmdev/nestjs-redis';
 
 @Injectable()
 export class AppService {
@@ -541,7 +541,7 @@ via service:
 ```TypeScript
 import { Injectable } from '@nestjs/common';
 import { Cluster } from 'ioredis';
-import { DEFAULT_CLUSTER_CLIENT, ClusterService } from '@liaoliaots/nestjs-redis';
+import { DEFAULT_CLUSTER_CLIENT, ClusterService } from '@mvmdev/nestjs-redis';
 
 @Injectable()
 export class AppService {
@@ -576,7 +576,7 @@ export class AppService {
 
 ```TypeScript
 import { Module } from '@nestjs/common';
-import { ClusterModule } from '@liaoliaots/nestjs-redis';
+import { ClusterModule } from '@mvmdev/nestjs-redis';
 import { TerminusModule } from '@nestjs/terminus';
 
 @Module({
@@ -598,7 +598,7 @@ export class AppModule {}
 ```TypeScript
 import { Controller, Get } from '@nestjs/common';
 import { HealthCheckService, HealthCheckResult } from '@nestjs/terminus';
-import { ClusterHealthIndicator, DEFAULT_CLUSTER_CLIENT } from '@liaoliaots/nestjs-redis';
+import { ClusterHealthIndicator, DEFAULT_CLUSTER_CLIENT } from '@mvmdev/nestjs-redis';
 
 @Controller('app')
 export class AppController {
@@ -668,7 +668,7 @@ And then send a GET request to **/app**, if redis is in a healthy state, you wil
 
 ```TypeScript
 import { Module } from '@nestjs/common';
-import { RedisModule } from '@liaoliaots/nestjs-redis';
+import { RedisModule } from '@mvmdev/nestjs-redis';
 
 @Module({
     imports: [RedisModule.forRoot()]
@@ -680,7 +680,7 @@ or
 
 ```TypeScript
 import { Module } from '@nestjs/common';
-import { RedisModule } from '@liaoliaots/nestjs-redis';
+import { RedisModule } from '@mvmdev/nestjs-redis';
 
 @Module({
     imports: [RedisModule.forRoot({ config: {} })]
@@ -692,7 +692,7 @@ or
 
 ```TypeScript
 import { Module } from '@nestjs/common';
-import { RedisModule } from '@liaoliaots/nestjs-redis';
+import { RedisModule } from '@mvmdev/nestjs-redis';
 
 @Module({
     imports: [RedisModule.forRoot({ config: { namespace: 'cache' } })]
@@ -712,7 +712,7 @@ export class AppModule {}
 
 ```TypeScript
 import { Module } from '@nestjs/common';
-import { RedisModule } from '@liaoliaots/nestjs-redis';
+import { RedisModule } from '@mvmdev/nestjs-redis';
 
 @Module({
     imports: [
@@ -765,7 +765,7 @@ cluster 2:
 
 ```TypeScript
 import { Module } from '@nestjs/common';
-import { ClusterModule } from '@liaoliaots/nestjs-redis';
+import { ClusterModule } from '@mvmdev/nestjs-redis';
 
 @Module({
     imports: [
@@ -799,14 +799,14 @@ export class AppModule {}
 
 👤 **LiaoLiao**
 
-- Website: https://github.com/liaoliaots
-- Github: [@liaoliaots](https://github.com/liaoliaots)
+- Website: https://github.com/movamo
+- Github: [@movamo](https://github.com/movamo)
 
 ## 🤝 Contributing
 
 Contributions, issues and feature requests are welcome!
 
-Feel free to check [issues page](https://github.com/liaoliaots/nestjs-redis/issues).
+Feel free to check [issues page](https://github.com/movamo/nestjs-redis/issues).
 
 ## Show your support
 
@@ -814,9 +814,9 @@ Give a ⭐️ if this project helped you!
 
 ## 📝 License
 
-Copyright © 2021 [LiaoLiao](https://github.com/liaoliaots).
+Copyright © 2021 [LiaoLiao](https://github.com/movamo).
 
-This project is [MIT](https://github.com/liaoliaots/nestjs-redis/blob/main/LICENSE) licensed.
+This project is [MIT](https://github.com/movamo/nestjs-redis/blob/main/LICENSE) licensed.
 
 ---
 

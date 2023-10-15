@@ -12,8 +12,8 @@ $ npm install --save @nestjs/terminus
 
 ```TypeScript
 import { Module } from '@nestjs/common';
-import { ClusterModule, RedisModule } from '@liaoliaots/nestjs-redis';
-import { RedisHealthModule } from '@liaoliaots/nestjs-redis/health'; // note the path
+import { ClusterModule, RedisModule } from '@mvmdev/nestjs-redis';
+import { RedisHealthModule } from '@mvmdev/nestjs-redis/health'; // note the path
 import { TerminusModule } from '@nestjs/terminus';
 import { AppController } from './app.controller';
 
@@ -49,8 +49,8 @@ export class AppModule {}
 ```TypeScript
 import { Controller, Get } from '@nestjs/common';
 import { HealthCheckService, HealthCheck, HealthCheckResult } from '@nestjs/terminus';
-import { InjectRedis, InjectCluster } from '@liaoliaots/nestjs-redis';
-import { RedisHealthIndicator } from '@liaoliaots/nestjs-redis/health'; // note the path
+import { InjectRedis, InjectCluster } from '@mvmdev/nestjs-redis';
+import { RedisHealthIndicator } from '@mvmdev/nestjs-redis/health'; // note the path
 import { Redis, Cluster } from 'ioredis';
 
 @Controller()

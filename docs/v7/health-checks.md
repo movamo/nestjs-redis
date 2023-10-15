@@ -13,9 +13,9 @@ $ npm install --save @nestjs/terminus
 ```TypeScript
 // app.module.ts
 import { Module } from '@nestjs/common';
-import { RedisModule, ClusterModule } from '@liaoliaots/nestjs-redis';
+import { RedisModule, ClusterModule } from '@mvmdev/nestjs-redis';
 import { TerminusModule } from '@nestjs/terminus';
-import { RedisHealthModule } from '@liaoliaots/nestjs-redis/health';
+import { RedisHealthModule } from '@mvmdev/nestjs-redis/health';
 import { AppController } from './app.controller';
 
 // Suppose we want to check health for redis and cluster, therefore we need to import the `ClusterModule` and `RedisModule`.
@@ -52,8 +52,8 @@ export class AppModule {}
 // app.controller.ts
 import { Controller, Get } from '@nestjs/common';
 import { HealthCheckService, HealthCheck, HealthCheckResult } from '@nestjs/terminus';
-import { InjectRedis, InjectCluster } from '@liaoliaots/nestjs-redis';
-import { RedisHealthIndicator } from '@liaoliaots/nestjs-redis/health';
+import { InjectRedis, InjectCluster } from '@mvmdev/nestjs-redis';
+import { RedisHealthIndicator } from '@mvmdev/nestjs-redis/health';
 import { Redis, Cluster } from 'ioredis';
 
 @Controller()

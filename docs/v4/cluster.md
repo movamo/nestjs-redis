@@ -6,7 +6,7 @@
 
 ```TypeScript
 import { Module } from '@nestjs/common';
-import { ClusterModule } from '@liaoliaots/nestjs-redis';
+import { ClusterModule } from '@mvmdev/nestjs-redis';
 
 @Module({
     imports: [
@@ -30,7 +30,7 @@ via decorator:
 
 ```TypeScript
 import { Injectable } from '@nestjs/common';
-import { InjectCluster, DEFAULT_CLUSTER_NAMESPACE } from '@liaoliaots/nestjs-redis';
+import { InjectCluster, DEFAULT_CLUSTER_NAMESPACE } from '@mvmdev/nestjs-redis';
 import { Cluster } from 'ioredis';
 
 @Injectable()
@@ -51,7 +51,7 @@ via manager:
 
 ```TypeScript
 import { Injectable } from '@nestjs/common';
-import { ClusterManager, DEFAULT_CLUSTER_NAMESPACE } from '@liaoliaots/nestjs-redis';
+import { ClusterManager, DEFAULT_CLUSTER_NAMESPACE } from '@mvmdev/nestjs-redis';
 import { Cluster } from 'ioredis';
 
 @Injectable()
@@ -95,7 +95,7 @@ via `useFactory`:
 
 ```TypeScript
 import { Module } from '@nestjs/common';
-import { ClusterModule, ClusterModuleOptions } from '@liaoliaots/nestjs-redis';
+import { ClusterModule, ClusterModuleOptions } from '@mvmdev/nestjs-redis';
 import { ConfigService, ConfigModule } from '@nestjs/config';
 
 @Module({
@@ -124,7 +124,7 @@ via `useClass`:
 
 ```TypeScript
 import { Module, Injectable } from '@nestjs/common';
-import { ClusterModule, ClusterOptionsFactory, ClusterModuleOptions } from '@liaoliaots/nestjs-redis';
+import { ClusterModule, ClusterOptionsFactory, ClusterModuleOptions } from '@mvmdev/nestjs-redis';
 
 @Injectable()
 export class ClusterConfigService implements ClusterOptionsFactory {
@@ -157,7 +157,7 @@ via `extraProviders`:
 // just a simple example
 
 import { Module, ValueProvider } from '@nestjs/common';
-import { ClusterModule, ClusterModuleOptions } from '@liaoliaots/nestjs-redis';
+import { ClusterModule, ClusterModuleOptions } from '@mvmdev/nestjs-redis';
 
 const MyOptionsSymbol = Symbol('options');
 const MyOptionsProvider: ValueProvider<ClusterModuleOptions> = {
@@ -200,7 +200,7 @@ ClusterModule.forRootAsync({
 
 ```TypeScript
 import { Module } from '@nestjs/common';
-import { ClusterModule } from '@liaoliaots/nestjs-redis';
+import { ClusterModule } from '@mvmdev/nestjs-redis';
 
 @Module({
     imports: [
@@ -227,7 +227,7 @@ The `ClusterModule` will display a message when `CLUSTER INFO` reporting the clu
 
 ```TypeScript
 import { Module } from '@nestjs/common';
-import { ClusterModule } from '@liaoliaots/nestjs-redis';
+import { ClusterModule } from '@mvmdev/nestjs-redis';
 
 @Module({
     imports: [
@@ -249,7 +249,7 @@ export class AppModule {}
 
 ```TypeScript
 import { Module } from '@nestjs/common';
-import { ClusterModule } from '@liaoliaots/nestjs-redis';
+import { ClusterModule } from '@mvmdev/nestjs-redis';
 
 @Module({
     imports: [
@@ -275,7 +275,7 @@ with URL:
 
 ```TypeScript
 import { Module } from '@nestjs/common';
-import { ClusterModule } from '@liaoliaots/nestjs-redis';
+import { ClusterModule } from '@mvmdev/nestjs-redis';
 
 @Module({
     imports: [
@@ -303,7 +303,7 @@ For example, we can listen to the error event of the cluster client.
 
 ```TypeScript
 import { Module } from '@nestjs/common';
-import { ClusterModule } from '@liaoliaots/nestjs-redis';
+import { ClusterModule } from '@mvmdev/nestjs-redis';
 
 @Module({
     imports: [

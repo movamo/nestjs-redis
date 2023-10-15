@@ -16,7 +16,7 @@
 
 ```TypeScript
 import { Module } from '@nestjs/common';
-import { RedisModule } from '@liaoliaots/nestjs-redis';
+import { RedisModule } from '@mvmdev/nestjs-redis';
 
 @Module({
     imports: [
@@ -79,7 +79,7 @@ cluster 2:
 
 ```TypeScript
 import { Module } from '@nestjs/common';
-import { ClusterModule } from '@liaoliaots/nestjs-redis';
+import { ClusterModule } from '@mvmdev/nestjs-redis';
 
 @Module({
     imports: [

@@ -8,7 +8,7 @@ If the redis server does **not** have a password, the host is **127.0.0.1** and 
 
 ```TypeScript
 import { Module } from '@nestjs/common';
-import { RedisModule } from '@liaoliaots/nestjs-redis';
+import { RedisModule } from '@mvmdev/nestjs-redis';
 
 @Module({
     imports: [RedisModule.forRoot()]
@@ -20,7 +20,7 @@ export class AppModule {}
 
 ```TypeScript
 import { Module } from '@nestjs/common';
-import { RedisModule } from '@liaoliaots/nestjs-redis';
+import { RedisModule } from '@mvmdev/nestjs-redis';
 
 @Module({
     imports: [RedisModule.forRoot({ closeClient: true })]
@@ -32,7 +32,7 @@ export class AppModule {}
 
 ```TypeScript
 import { Module } from '@nestjs/common';
-import { RedisModule } from '@liaoliaots/nestjs-redis';
+import { RedisModule } from '@mvmdev/nestjs-redis';
 
 @Module({
     imports: [RedisModule.forRoot({ closeClient: true, config: { namespace: 'default' } })]
@@ -54,7 +54,7 @@ export class AppModule {}
 
 ```TypeScript
 import { Module } from '@nestjs/common';
-import { RedisModule } from '@liaoliaots/nestjs-redis';
+import { RedisModule } from '@mvmdev/nestjs-redis';
 
 @Module({
     imports: [
@@ -112,7 +112,7 @@ cluster 2:
 
 ```TypeScript
 import { Module } from '@nestjs/common';
-import { ClusterModule } from '@liaoliaots/nestjs-redis';
+import { ClusterModule } from '@mvmdev/nestjs-redis';
 
 @Module({
     imports: [

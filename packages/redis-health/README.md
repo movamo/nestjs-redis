@@ -20,9 +20,9 @@
     <a href="#usage"><strong>Explore the docs »</strong></a>
     <br />
     <br />
-    <a href="https://github.com/liaoliaots/nestjs-redis/issues">Report Bug</a>
+    <a href="https://github.com/movamo/nestjs-redis/issues">Report Bug</a>
     ·
-    <a href="https://github.com/liaoliaots/nestjs-redis/issues">Request Feature</a>
+    <a href="https://github.com/movamo/nestjs-redis/issues">Request Feature</a>
   </p>
 </div>
 
@@ -74,11 +74,11 @@ This lib requires **Node.js >=12.22.0**, **NestJS ^9.0.0**, **ioredis ^5.0.0**.
 
 ```sh
 # with npm
-npm install @nestjs/terminus @liaoliaots/nestjs-redis-health ioredis
+npm install @nestjs/terminus @mvmdev/nestjs-redis-health ioredis
 # with yarn
-yarn add @nestjs/terminus @liaoliaots/nestjs-redis-health ioredis
+yarn add @nestjs/terminus @mvmdev/nestjs-redis-health ioredis
 # with pnpm
-pnpm add @nestjs/terminus @liaoliaots/nestjs-redis-health ioredis
+pnpm add @nestjs/terminus @mvmdev/nestjs-redis-health ioredis
 ```
 
 ## Usage
@@ -89,7 +89,7 @@ pnpm add @nestjs/terminus @liaoliaots/nestjs-redis-health ioredis
 // app.module.ts
 import { Module } from '@nestjs/common';
 import { TerminusModule } from '@nestjs/terminus';
-import { RedisHealthModule } from '@liaoliaots/nestjs-redis-health';
+import { RedisHealthModule } from '@mvmdev/nestjs-redis-health';
 import { AppController } from './app.controller';
 
 @Module({
@@ -105,7 +105,7 @@ export class AppModule {}
 // app.controller.ts
 import { Controller, Get } from '@nestjs/common';
 import { HealthCheckService, HealthCheck, HealthCheckResult } from '@nestjs/terminus';
-import { RedisHealthIndicator } from '@liaoliaots/nestjs-redis-health';
+import { RedisHealthIndicator } from '@mvmdev/nestjs-redis-health';
 import Redis from 'ioredis';
 
 @Controller()
@@ -171,14 +171,14 @@ export class AppController {
 
 Distributed under the MIT License. See `LICENSE` for more information.
 
-[npm-shield]: https://img.shields.io/npm/v/@liaoliaots/nestjs-redis-health/latest?style=for-the-badge
-[npm-url]: https://www.npmjs.com/package/@liaoliaots/nestjs-redis-health
-[downloads-shield]: https://img.shields.io/npm/dm/@liaoliaots/nestjs-redis-health?style=for-the-badge
-[downloads-url]: https://www.npmjs.com/package/@liaoliaots/nestjs-redis-health
-[stars-shield]: https://img.shields.io/github/stars/liaoliaots/nestjs-redis?style=for-the-badge
-[stars-url]: https://github.com/liaoliaots/nestjs-redis/stargazers
-[issues-shield]: https://img.shields.io/github/issues/liaoliaots/nestjs-redis?style=for-the-badge
-[issues-url]: https://github.com/liaoliaots/nestjs-redis/issues
-[license-shield]: https://img.shields.io/npm/l/@liaoliaots/nestjs-redis?style=for-the-badge
-[license-url]: https://github.com/liaoliaots/nestjs-redis/blob/main/LICENSE
-[vulnerabilities-shield]: https://img.shields.io/snyk/vulnerabilities/npm/@liaoliaots/nestjs-redis-health?style=for-the-badge
+[npm-shield]: https://img.shields.io/npm/v/@mvmdev/nestjs-redis-health/latest?style=for-the-badge
+[npm-url]: https://www.npmjs.com/package/@mvmdev/nestjs-redis-health
+[downloads-shield]: https://img.shields.io/npm/dm/@mvmdev/nestjs-redis-health?style=for-the-badge
+[downloads-url]: https://www.npmjs.com/package/@mvmdev/nestjs-redis-health
+[stars-shield]: https://img.shields.io/github/stars/mvmdev/nestjs-redis?style=for-the-badge
+[stars-url]: https://github.com/movamo/nestjs-redis/stargazers
+[issues-shield]: https://img.shields.io/github/issues/mvmdev/nestjs-redis?style=for-the-badge
+[issues-url]: https://github.com/movamo/nestjs-redis/issues
+[license-shield]: https://img.shields.io/npm/l/@mvmdev/nestjs-redis?style=for-the-badge
+[license-url]: https://github.com/movamo/nestjs-redis/blob/main/LICENSE
+[vulnerabilities-shield]: https://img.shields.io/snyk/vulnerabilities/npm/@mvmdev/nestjs-redis-health?style=for-the-badge

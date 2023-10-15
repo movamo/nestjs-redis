@@ -4,7 +4,7 @@
 
 ```TypeScript
 import { Module } from '@nestjs/common';
-import { ClusterModule } from '@liaoliaots/nestjs-redis';
+import { ClusterModule } from '@mvmdev/nestjs-redis';
 
 @Module({
     imports: [
@@ -29,7 +29,7 @@ via decorator:
 
 ```TypeScript
 import { Injectable } from '@nestjs/common';
-import { InjectCluster, DEFAULT_CLUSTER_NAMESPACE } from '@liaoliaots/nestjs-redis';
+import { InjectCluster, DEFAULT_CLUSTER_NAMESPACE } from '@mvmdev/nestjs-redis';
 import { Cluster } from 'ioredis';
 
 @Injectable()
@@ -50,7 +50,7 @@ via service:
 
 ```TypeScript
 import { Injectable } from '@nestjs/common';
-import { ClusterService, DEFAULT_CLUSTER_NAMESPACE } from '@liaoliaots/nestjs-redis';
+import { ClusterService, DEFAULT_CLUSTER_NAMESPACE } from '@mvmdev/nestjs-redis';
 import { Cluster } from 'ioredis';
 
 @Injectable()
@@ -71,22 +71,22 @@ export class AppService {
 
 ## Configuration
 
-### [ClusterModuleOptions](https://github.com/liaoliaots/nestjs-redis/blob/main/lib/cluster/interfaces/cluster-module-options.interface.ts#L45)
+### [ClusterModuleOptions](https://github.com/movamo/nestjs-redis/blob/main/lib/cluster/interfaces/cluster-module-options.interface.ts#L45)
 
-| Name                                                                                                                               | Type                                               | Default     | Required | Description                                                                                                                                                                                                                                                                                                    |
-| ---------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------- | ----------- | -------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [closeClient](https://github.com/liaoliaots/nestjs-redis/blob/main/lib/cluster/interfaces/cluster-module-options.interface.ts#L49) | `boolean`                                          | `true`      | `false`  | If set to `true`, all clients will be closed automatically on nestjs application shutdown. To use `closeClient`, you **must enable listeners** by calling `app.enableShutdownHooks()`. [Read more about the application shutdown.](https://docs.nestjs.com/fundamentals/lifecycle-events#application-shutdown) |
-| [readyLog](https://github.com/liaoliaots/nestjs-redis/blob/main/lib/cluster/interfaces/cluster-module-options.interface.ts#L56)    | `boolean`                                          | `false`     | `false`  | If set to `true`, then ready logging will be displayed when the client is ready.                                                                                                                                                                                                                               |
-| [errorLog](https://github.com/liaoliaots/nestjs-redis/blob/main/lib/cluster/interfaces/cluster-module-options.interface.ts#L63)    | `boolean`                                          | `true`      | `false`  | If set to `true`, then errors that occurred while connecting will be displayed by the built-in logger.                                                                                                                                                                                                         |
-| [config](https://github.com/liaoliaots/nestjs-redis/blob/main/lib/cluster/interfaces/cluster-module-options.interface.ts#L70)      | `ClusterClientOptions` \| `ClusterClientOptions`[] | `undefined` | `true`   | Used to specify single or multiple clients.                                                                                                                                                                                                                                                                    |
+| Name                                                                                                                            | Type                                               | Default     | Required | Description                                                                                                                                                                                                                                                                                                    |
+|---------------------------------------------------------------------------------------------------------------------------------| -------------------------------------------------- | ----------- | -------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [closeClient](https://github.com/movamo/nestjs-redis/blob/main/lib/cluster/interfaces/cluster-module-options.interface.ts#L49)  | `boolean`                                          | `true`      | `false`  | If set to `true`, all clients will be closed automatically on nestjs application shutdown. To use `closeClient`, you **must enable listeners** by calling `app.enableShutdownHooks()`. [Read more about the application shutdown.](https://docs.nestjs.com/fundamentals/lifecycle-events#application-shutdown) |
+| [readyLog](https://github.com/movamo/nestjs-redis/blob/main/lib/cluster/interfaces/cluster-module-options.interface.ts#L56) | `boolean`                                          | `false`     | `false`  | If set to `true`, then ready logging will be displayed when the client is ready.                                                                                                                                                                                                                               |
+| [errorLog](https://github.com/movamo/nestjs-redis/blob/main/lib/cluster/interfaces/cluster-module-options.interface.ts#L63) | `boolean`                                          | `true`      | `false`  | If set to `true`, then errors that occurred while connecting will be displayed by the built-in logger.                                                                                                                                                                                                         |
+| [config](https://github.com/movamo/nestjs-redis/blob/main/lib/cluster/interfaces/cluster-module-options.interface.ts#L70)   | `ClusterClientOptions` \| `ClusterClientOptions`[] | `undefined` | `true`   | Used to specify single or multiple clients.                                                                                                                                                                                                                                                                    |
 
-### [ClusterClientOptions](https://github.com/liaoliaots/nestjs-redis/blob/main/lib/cluster/interfaces/cluster-module-options.interface.ts#L6)
+### [ClusterClientOptions](https://github.com/movamo/nestjs-redis/blob/main/lib/cluster/interfaces/cluster-module-options.interface.ts#L6)
 
 | Name                                                                                                                                   | Type                                                             | Default     | Required | Description                                                                                                                                                                   |
 | -------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------- | ----------- | -------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [namespace](https://github.com/liaoliaots/nestjs-redis/blob/main/lib/cluster/interfaces/cluster-module-options.interface.ts#L10)       | `string` \| `symbol`                                             | `'default'` | `false`  | Client name. If client name is not given then it will be called "default". Different clients must have different names. You can import `DEFAULT_CLUSTER_NAMESPACE` to use it. |
-| [nodes](https://github.com/liaoliaots/nestjs-redis/blob/main/lib/cluster/interfaces/cluster-module-options.interface.ts#L18)           | `{ host?: string; port?: number }[]` \| `string[]` \| `number[]` | `undefined` | `true`   | List of cluster nodes.                                                                                                                                                        |
-| [onClientCreated](https://github.com/liaoliaots/nestjs-redis/blob/main/lib/cluster/interfaces/cluster-module-options.interface.ts#L35) | `function`                                                       | `undefined` | `false`  | Function to be executed as soon as the client is created.                                                                                                                     |
+| [namespace](https://github.com/movamo/nestjs-redis/blob/main/lib/cluster/interfaces/cluster-module-options.interface.ts#L10)       | `string` \| `symbol`                                             | `'default'` | `false`  | Client name. If client name is not given then it will be called "default". Different clients must have different names. You can import `DEFAULT_CLUSTER_NAMESPACE` to use it. |
+| [nodes](https://github.com/movamo/nestjs-redis/blob/main/lib/cluster/interfaces/cluster-module-options.interface.ts#L18)           | `{ host?: string; port?: number }[]` \| `string[]` \| `number[]` | `undefined` | `true`   | List of cluster nodes.                                                                                                                                                        |
+| [onClientCreated](https://github.com/movamo/nestjs-redis/blob/main/lib/cluster/interfaces/cluster-module-options.interface.ts#L35) | `function`                                                       | `undefined` | `false`  | Function to be executed as soon as the client is created.                                                                                                                     |
 | **...**[ClusterOptions](https://github.com/luin/ioredis/blob/main/lib/cluster/ClusterOptions.ts#L29)                                   | `ClusterOptions`                                                 | -           | `false`  | Extends from [ClusterOptions](https://luin.github.io/ioredis/interfaces/ClusterOptions.html).                                                                                 |
 
 ### Asynchronous configuration
@@ -95,7 +95,7 @@ via `useFactory`:
 
 ```TypeScript
 import { Module } from '@nestjs/common';
-import { ClusterModule, ClusterModuleOptions } from '@liaoliaots/nestjs-redis';
+import { ClusterModule, ClusterModuleOptions } from '@mvmdev/nestjs-redis';
 import { ConfigService, ConfigModule } from '@nestjs/config';
 
 @Module({
@@ -123,7 +123,7 @@ via `useClass`:
 
 ```TypeScript
 import { Module, Injectable } from '@nestjs/common';
-import { ClusterModule, ClusterOptionsFactory, ClusterModuleOptions } from '@liaoliaots/nestjs-redis';
+import { ClusterModule, ClusterOptionsFactory, ClusterModuleOptions } from '@mvmdev/nestjs-redis';
 
 @Injectable()
 export class ClusterConfigService implements ClusterOptionsFactory {
@@ -155,7 +155,7 @@ via `extraProviders`:
 // just a simple example
 
 import { Module, ValueProvider } from '@nestjs/common';
-import { ClusterModule, ClusterModuleOptions } from '@liaoliaots/nestjs-redis';
+import { ClusterModule, ClusterModuleOptions } from '@mvmdev/nestjs-redis';
 
 const MyOptionsSymbol = Symbol('options');
 const MyOptionsProvider: ValueProvider<ClusterModuleOptions> = {
@@ -196,7 +196,7 @@ ClusterModule.forRootAsync({
 
 ```TypeScript
 import { Module } from '@nestjs/common';
-import { ClusterModule } from '@liaoliaots/nestjs-redis';
+import { ClusterModule } from '@mvmdev/nestjs-redis';
 
 @Module({
     imports: [
@@ -222,7 +222,7 @@ The `ClusterModule` will display a message when `CLUSTER INFO` reporting the clu
 
 ```TypeScript
 import { Module } from '@nestjs/common';
-import { ClusterModule } from '@liaoliaots/nestjs-redis';
+import { ClusterModule } from '@mvmdev/nestjs-redis';
 
 @Module({
     imports: [
@@ -244,7 +244,7 @@ export class AppModule {}
 
 ```TypeScript
 import { Module } from '@nestjs/common';
-import { ClusterModule } from '@liaoliaots/nestjs-redis';
+import { ClusterModule } from '@mvmdev/nestjs-redis';
 
 @Module({
     imports: [
@@ -270,7 +270,7 @@ with URL:
 
 ```TypeScript
 import { Module } from '@nestjs/common';
-import { ClusterModule } from '@liaoliaots/nestjs-redis';
+import { ClusterModule } from '@mvmdev/nestjs-redis';
 
 @Module({
     imports: [
@@ -296,7 +296,7 @@ For example, we can listen to the error event of the cluster client.
 
 ```TypeScript
 import { Module } from '@nestjs/common';
-import { ClusterModule } from '@liaoliaots/nestjs-redis';
+import { ClusterModule } from '@mvmdev/nestjs-redis';
 
 @Module({
     imports: [
@@ -323,7 +323,7 @@ You can change the behavior by modifying `isGlobal` parameter:
 ```TypeScript
 // cats.module.ts
 import { Module } from '@nestjs/common';
-import { ClusterModule } from '@liaoliaots/nestjs-redis';
+import { ClusterModule } from '@mvmdev/nestjs-redis';
 import { CatsService } from './cats.service';
 import { CatsController } from './cats.controller';
 

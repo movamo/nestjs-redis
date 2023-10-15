@@ -4,7 +4,7 @@
 
 ```TypeScript
 import { Module } from '@nestjs/common';
-import { RedisModule } from '@liaoliaots/nestjs-redis';
+import { RedisModule } from '@mvmdev/nestjs-redis';
 
 @Module({
     imports: [
@@ -30,7 +30,7 @@ via decorator:
 
 ```TypeScript
 import { Injectable } from '@nestjs/common';
-import { InjectRedis, DEFAULT_REDIS_NAMESPACE } from '@liaoliaots/nestjs-redis';
+import { InjectRedis, DEFAULT_REDIS_NAMESPACE } from '@mvmdev/nestjs-redis';
 import Redis from 'ioredis';
 
 @Injectable()
@@ -51,7 +51,7 @@ via service:
 
 ```TypeScript
 import { Injectable } from '@nestjs/common';
-import { RedisService, DEFAULT_REDIS_NAMESPACE } from '@liaoliaots/nestjs-redis';
+import { RedisService, DEFAULT_REDIS_NAMESPACE } from '@mvmdev/nestjs-redis';
 import Redis from 'ioredis';
 
 @Injectable()
@@ -74,7 +74,7 @@ export class AppService {
 
 ```TypeScript
 import { Module } from '@nestjs/common';
-import { RedisModule, RedisService } from '@liaoliaots/nestjs-redis';
+import { RedisModule, RedisService } from '@mvmdev/nestjs-redis';
 import { ThrottlerModule } from '@nestjs/throttler';
 import { ThrottlerStorageRedisService } from 'nestjs-throttler-storage-redis';
 
@@ -102,24 +102,24 @@ export class AppModule {}
 
 ## Configuration
 
-### [RedisModuleOptions](https://github.com/liaoliaots/nestjs-redis/blob/main/lib/redis/interfaces/redis-module-options.interface.ts#L46)
+### [RedisModuleOptions](https://github.com/movamo/nestjs-redis/blob/main/lib/redis/interfaces/redis-module-options.interface.ts#L46)
 
 | Name                                                                                                                             | Type                                                                   | Default     | Required | Description                                                                                                                                                                                                                                                                                                    |
 | -------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------- | ----------- | -------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [closeClient](https://github.com/liaoliaots/nestjs-redis/blob/main/lib/redis/interfaces/redis-module-options.interface.ts#L50)   | `boolean`                                                              | `true`      | `false`  | If set to `true`, all clients will be closed automatically on nestjs application shutdown. To use `closeClient`, you **must enable listeners** by calling `app.enableShutdownHooks()`. [Read more about the application shutdown.](https://docs.nestjs.com/fundamentals/lifecycle-events#application-shutdown) |
-| [commonOptions](https://github.com/liaoliaots/nestjs-redis/blob/main/lib/redis/interfaces/redis-module-options.interface.ts#L57) | [RedisOptions](https://luin.github.io/ioredis/index.html#RedisOptions) | `undefined` | `false`  | Common options to be passed to each client.                                                                                                                                                                                                                                                                    |
-| [readyLog](https://github.com/liaoliaots/nestjs-redis/blob/main/lib/redis/interfaces/redis-module-options.interface.ts#L62)      | `boolean`                                                              | `false`     | `false`  | If set to `true`, then ready logging will be displayed when the client is ready.                                                                                                                                                                                                                               |
-| [errorLog](https://github.com/liaoliaots/nestjs-redis/blob/main/lib/redis/interfaces/redis-module-options.interface.ts#L69)      | `boolean`                                                              | `true`      | `false`  | If set to `true`, then errors that occurred while connecting will be displayed by the built-in logger.                                                                                                                                                                                                         |
-| [config](https://github.com/liaoliaots/nestjs-redis/blob/main/lib/redis/interfaces/redis-module-options.interface.ts#L76)        | `RedisClientOptions` \| `RedisClientOptions`[]                         | `undefined` | `false`  | Used to specify single or multiple clients.                                                                                                                                                                                                                                                                    |
+| [closeClient](https://github.com/movamo/nestjs-redis/blob/main/lib/redis/interfaces/redis-module-options.interface.ts#L50)   | `boolean`                                                              | `true`      | `false`  | If set to `true`, all clients will be closed automatically on nestjs application shutdown. To use `closeClient`, you **must enable listeners** by calling `app.enableShutdownHooks()`. [Read more about the application shutdown.](https://docs.nestjs.com/fundamentals/lifecycle-events#application-shutdown) |
+| [commonOptions](https://github.com/movamo/nestjs-redis/blob/main/lib/redis/interfaces/redis-module-options.interface.ts#L57) | [RedisOptions](https://luin.github.io/ioredis/index.html#RedisOptions) | `undefined` | `false`  | Common options to be passed to each client.                                                                                                                                                                                                                                                                    |
+| [readyLog](https://github.com/movamo/nestjs-redis/blob/main/lib/redis/interfaces/redis-module-options.interface.ts#L62)      | `boolean`                                                              | `false`     | `false`  | If set to `true`, then ready logging will be displayed when the client is ready.                                                                                                                                                                                                                               |
+| [errorLog](https://github.com/movamo/nestjs-redis/blob/main/lib/redis/interfaces/redis-module-options.interface.ts#L69)      | `boolean`                                                              | `true`      | `false`  | If set to `true`, then errors that occurred while connecting will be displayed by the built-in logger.                                                                                                                                                                                                         |
+| [config](https://github.com/movamo/nestjs-redis/blob/main/lib/redis/interfaces/redis-module-options.interface.ts#L76)        | `RedisClientOptions` \| `RedisClientOptions`[]                         | `undefined` | `false`  | Used to specify single or multiple clients.                                                                                                                                                                                                                                                                    |
 
-### [RedisClientOptions](https://github.com/liaoliaots/nestjs-redis/blob/main/lib/redis/interfaces/redis-module-options.interface.ts#L5)
+### [RedisClientOptions](https://github.com/movamo/nestjs-redis/blob/main/lib/redis/interfaces/redis-module-options.interface.ts#L5)
 
 | Name                                                                                                                               | Type                 | Default     | Required | Description                                                                                                                                                                                                    |
-| ---------------------------------------------------------------------------------------------------------------------------------- | -------------------- | ----------- | -------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [namespace](https://github.com/liaoliaots/nestjs-redis/blob/main/lib/redis/interfaces/redis-module-options.interface.ts#L9)        | `string` \| `symbol` | `'default'` | `false`  | Client name. If client name is not given then it will be called `"default"`. Different clients must have different names. You can import `DEFAULT_REDIS_NAMESPACE` to use it.                                  |
-| [url](https://github.com/liaoliaots/nestjs-redis/blob/main/lib/redis/interfaces/redis-module-options.interface.ts#L17)             | `string`             | `undefined` | `false`  | URI scheme to be used to specify connection options as a [redis://](https://www.iana.org/assignments/uri-schemes/prov/redis) URL or [rediss://](https://www.iana.org/assignments/uri-schemes/prov/rediss) URL. |
-| [path](https://github.com/liaoliaots/nestjs-redis/blob/main/lib/redis/interfaces/redis-module-options.interface.ts#L31)            | `string`             | `undefined` | `false`  | Path to be used for Unix domain sockets.                                                                                                                                                                       |
-| [onClientCreated](https://github.com/liaoliaots/nestjs-redis/blob/main/lib/redis/interfaces/redis-module-options.interface.ts#L36) | `function`           | `undefined` | `false`  | Function to be executed as soon as the client is created.                                                                                                                                                      |
+|------------------------------------------------------------------------------------------------------------------------------------| -------------------- | ----------- | -------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [namespace](https://github.com/movamo/nestjs-redis/blob/main/lib/redis/interfaces/redis-module-options.interface.ts#L9)            | `string` \| `symbol` | `'default'` | `false`  | Client name. If client name is not given then it will be called `"default"`. Different clients must have different names. You can import `DEFAULT_REDIS_NAMESPACE` to use it.                                  |
+| [url](https://github.com/movamo/nestjs-redis/blob/main/lib/redis/interfaces/redis-module-options.interface.ts#L17)             | `string`             | `undefined` | `false`  | URI scheme to be used to specify connection options as a [redis://](https://www.iana.org/assignments/uri-schemes/prov/redis) URL or [rediss://](https://www.iana.org/assignments/uri-schemes/prov/rediss) URL. |
+| [path](https://github.com/movamo/nestjs-redis/blob/main/lib/redis/interfaces/redis-module-options.interface.ts#L31)            | `string`             | `undefined` | `false`  | Path to be used for Unix domain sockets.                                                                                                                                                                       |
+| [onClientCreated](https://github.com/movamo/nestjs-redis/blob/main/lib/redis/interfaces/redis-module-options.interface.ts#L36) | `function`           | `undefined` | `false`  | Function to be executed as soon as the client is created.                                                                                                                                                      |
 | **...**[RedisOptions](https://github.com/luin/ioredis/blob/main/lib/redis/RedisOptions.ts#L184)                                    | `RedisOptions`       | -           | `false`  | Extends from [RedisOptions](https://luin.github.io/ioredis/index.html#RedisOptions).                                                                                                                           |
 
 ### Asynchronous configuration
@@ -128,7 +128,7 @@ via `useFactory`:
 
 ```TypeScript
 import { Module } from '@nestjs/common';
-import { RedisModule, RedisModuleOptions } from '@liaoliaots/nestjs-redis';
+import { RedisModule, RedisModuleOptions } from '@mvmdev/nestjs-redis';
 import { ConfigService, ConfigModule } from '@nestjs/config';
 
 @Module({
@@ -157,7 +157,7 @@ via `useClass`:
 
 ```TypeScript
 import { Module, Injectable } from '@nestjs/common';
-import { RedisModule, RedisOptionsFactory, RedisModuleOptions } from '@liaoliaots/nestjs-redis';
+import { RedisModule, RedisOptionsFactory, RedisModuleOptions } from '@mvmdev/nestjs-redis';
 
 @Injectable()
 export class RedisConfigService implements RedisOptionsFactory {
@@ -190,7 +190,7 @@ via `extraProviders`:
 // just a simple example
 
 import { Module, ValueProvider } from '@nestjs/common';
-import { RedisModule, RedisModuleOptions } from '@liaoliaots/nestjs-redis';
+import { RedisModule, RedisModuleOptions } from '@mvmdev/nestjs-redis';
 
 const MyOptionsSymbol = Symbol('options');
 const MyOptionsProvider: ValueProvider<RedisModuleOptions> = {
@@ -232,7 +232,7 @@ RedisModule.forRootAsync({
 
 ```TypeScript
 import { Module } from '@nestjs/common';
-import { RedisModule } from '@liaoliaots/nestjs-redis';
+import { RedisModule } from '@mvmdev/nestjs-redis';
 
 @Module({
     imports: [
@@ -259,7 +259,7 @@ The `RedisModule` will display a message when the server reports that it is read
 
 ```TypeScript
 import { Module } from '@nestjs/common';
-import { RedisModule } from '@liaoliaots/nestjs-redis';
+import { RedisModule } from '@mvmdev/nestjs-redis';
 
 @Module({
     imports: [
@@ -282,7 +282,7 @@ export class AppModule {}
 
 ```TypeScript
 import { Module } from '@nestjs/common';
-import { RedisModule } from '@liaoliaots/nestjs-redis';
+import { RedisModule } from '@mvmdev/nestjs-redis';
 
 @Module({
     imports: [
@@ -310,7 +310,7 @@ with URL:
 
 ```TypeScript
 import { Module } from '@nestjs/common';
-import { RedisModule } from '@liaoliaots/nestjs-redis';
+import { RedisModule } from '@mvmdev/nestjs-redis';
 
 @Module({
     imports: [
@@ -338,7 +338,7 @@ export class AppModule {}
 
 ```TypeScript
 import { Module } from '@nestjs/common';
-import { RedisModule } from '@liaoliaots/nestjs-redis';
+import { RedisModule } from '@mvmdev/nestjs-redis';
 
 @Module({
     imports: [
@@ -369,7 +369,7 @@ You can also override the `commonOptions`:
 
 ```TypeScript
 import { Module } from '@nestjs/common';
-import { RedisModule } from '@liaoliaots/nestjs-redis';
+import { RedisModule } from '@mvmdev/nestjs-redis';
 
 @Module({
     imports: [
@@ -403,7 +403,7 @@ For example, we can listen to the error event of the redis client.
 
 ```TypeScript
 import { Module } from '@nestjs/common';
-import { RedisModule } from '@liaoliaots/nestjs-redis';
+import { RedisModule } from '@mvmdev/nestjs-redis';
 
 @Module({
     imports: [
@@ -431,7 +431,7 @@ You can change the behavior by modifying `isGlobal` parameter:
 ```TypeScript
 // cats.module.ts
 import { Module } from '@nestjs/common';
-import { RedisModule } from '@liaoliaots/nestjs-redis';
+import { RedisModule } from '@mvmdev/nestjs-redis';
 import { CatsService } from './cats.service';
 import { CatsController } from './cats.controller';
 
@@ -485,7 +485,7 @@ unixsocketperm 777
 
 ```ts
 import { Module } from '@nestjs/common';
-import { RedisModule } from '@liaoliaots/nestjs-redis';
+import { RedisModule } from '@mvmdev/nestjs-redis';
 
 @Module({
     imports: [

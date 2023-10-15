@@ -1,5 +1,5 @@
 import { Test, TestingModule } from '@nestjs/testing';
-import { getRedisToken } from '@liaoliaots/nestjs-redis';
+import { getRedisToken } from '@mvmdev/nestjs-redis';
 import { CreateCatDto } from './create-cat.dto';
 import { CatsService } from './cats.service';
 import { Cat } from './cat';
