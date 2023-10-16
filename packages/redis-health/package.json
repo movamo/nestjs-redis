@@ -1,6 +1,6 @@
 {
   "name": "@mvmdev/nestjs-redis-health",
-  "version": "10.0.0",
+  "version": "10.0.1",
   "description": "Redis(ioredis) health checks module for Nest framework (node.js).",
   "author": "movamo",
   "main": "dist/index.js",
